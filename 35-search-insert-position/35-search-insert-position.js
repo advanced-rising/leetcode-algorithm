@@ -6,10 +6,6 @@
 var searchInsert = function (nums, target) {
   let numsArr = nums;
   const index = nums.indexOf(target);
-
-  if (index === -1) {
-    numsArr.push(target);
-  }
-  numsArr.sort((a, b) => a - b);
-  return numsArr.indexOf(target);
+  if (index === -1) numsArr.push(target);
+  return numsArr.sort((a, b) => a - b).indexOf(target);
 };
