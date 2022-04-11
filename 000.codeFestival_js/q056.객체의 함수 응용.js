@@ -11,17 +11,17 @@ const nationWidth = {
 // 출력
 // England 22023
 
-const korea = nationWidth["korea"];
-
 function solution(national) {
+  const korea = national["korea"];
+  delete national["korea"];
   const entry = Object.entries(national);
   const values = Object.values(national);
   let gap = Math.max.apply(null, values);
   let items = [];
 
   for (const key in entry) {
-    if (gap > Math.abs(entry[key][1] - 1)) {
-      gap = Math.abs(entry[key][1] - w);
+    if (gap > Math.abs(entry[key][1] - korea)) {
+      gap = Math.abs(entry[key][1] - korea);
       items = entry[key];
     }
   }
